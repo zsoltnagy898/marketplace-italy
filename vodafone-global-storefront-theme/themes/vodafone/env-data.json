@@ -1,0 +1,46 @@
+{
+  "https://testvfitaly.appdirect.com": [
+    {
+      "name": "recommendedSolutions",
+      "type": "list",
+      "categories": "42414"
+    },
+    {
+      "name": "carousel",
+      "type": "list",
+      "categories": "42413"
+    },
+    {
+      "name": "popularApps",
+      "type": "list",
+      "categories": "42152"
+    },
+    {
+      "name": "collaboration",
+      "type": "list",
+      "categories": "42161"
+    }
+  ],
+  "https://cloud-apps.vodafone.it": [
+    {
+      "name": "recommendedSolutions",
+      "type": "list",
+      "categories": "1764"
+    },
+    {
+      "name": "carousel",
+      "type": "list",
+      "categories": "1761"
+    },
+    {
+      "name": "popularApps",
+      "type": "list",
+      "categories": "1645"
+    },
+    {
+      "name": "collaboration",
+      "type": "list",
+      "categories": "42161"
+    }
+  ]
+}
