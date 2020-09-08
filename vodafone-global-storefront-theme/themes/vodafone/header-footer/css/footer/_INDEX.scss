@@ -91,6 +91,7 @@
 @media (max-width: 991.98px) {
   .footer__aside {
     margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 20px;
     line-height: 1.5;
   }
@@ -137,18 +138,19 @@
 }
 
 #logocol {
-  width: 60%;
+  width: 72%;
   @include media-breakpoint-down(md) {
       width: 100%;
+      margin-left: 0px;
     }
 }
 
 #socialcol {
-  width: 39%;
+  width: 24%;
   @include media-breakpoint-down(md) {
     width: 100%;
     margin-top: 25px;
-    margin-left: 5px;
+    margin-left: -10px;
   }
 }
 
