@@ -1,3 +1,4 @@
+@import "../../../../../../node_modules/bootstrap/scss/bootstrap";
 @import "../../../assets/css/custom/variables";
 
 .adb-page_footer {
@@ -30,7 +31,7 @@
   margin-bottom: 0;
   font-size: 32px;
   font-family: "VodafoneLight", Arial, sans-serif;
-  display: flex;
+  // display: flex;
   list-style: none;
   padding-left: 0;
   float: none !important;
@@ -77,16 +78,21 @@
 
 .footer__copyright {
   font-family: "VodafoneLight", Arial, sans-serif;
+  line-height: 1.5;
 }
 
 .footer__curtain {
   padding: 65px;
+  @include media-breakpoint-down(md) {
+    padding: 30px !important;
+  }
 }
 
 @media (max-width: 991.98px) {
   .footer__aside {
     margin-top: 20px;
     font-size: 20px;
+    line-height: 1.5;
   }
 
   .footer__logo {
@@ -100,7 +106,7 @@
 
   .footer__link {
     width: 100%;
-    font-size: 23px;
+    font-size: 18px;
   }
 
   .footer__link {
@@ -122,5 +128,33 @@
     clear: left;
     display: block;
     float: none;
+  }
+}
+
+.footer {
+  padding: 0;
+  font-family: "VodafoneLight", Arial, sans-serif !important;
+}
+
+#logocol {
+  width: 60%;
+  @include media-breakpoint-down(md) {
+      width: 100%;
+    }
+}
+
+#socialcol {
+  width: 39%;
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    margin-top: 25px;
+    margin-left: 5px;
+  }
+}
+
+#socialcol {
+  a {
+    padding: 0 !important;
+    margin: 0 !important;
   }
 }
