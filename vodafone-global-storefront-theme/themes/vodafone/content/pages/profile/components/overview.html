@@ -1,3 +1,5 @@
+{% from "/macros/profile/profile-action-button.html" import productActionButton %}
+
 {% macro productOverview(application) %}
 {% set hasDemoButton = application.overview.callToActions.demo.label %}
 {% set hasGuideButton = application.overview.downloadDocumentationUrl %}
@@ -43,18 +45,21 @@
             <p>{{ application.overview.description }}</p>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
         {% if (not hasDemoButton) and (not hasGuideButton) %}
         <div class="col col-12 col-lg"></div>
         {% endif %}
         <div class="col col-12 {{'col-lg' if (not hasDemoButton) and (not hasGuideButton)}} d-flex justify-content-center flex-wrap flex-md-nowrap profile-overview__call-to-actions">
-            <a href="#Editions"
+            {% for cta in application.callToActions.items %}
+            <!-- <a href="#Editions"
                class="button button--primary mb-3 mb-md-0 d-flex align-items-center justify-content-center">
                 <svg focusable="false" aria-hidden="true" class="icon icon--small mr-3">
                     <use xlink:href="#icon-shopping-trolley"/>
                 </svg>
-                {{application.domains.i18n.buyNow}}
-            </a>
+                {{item.label}}
+            </a> -->
+            {{ productActionButton(cta) }}
+            {% endfor %}
 
             {% if application.overview.callToActions.demo.label %}
             <button class="button button--secondary ml-md-3 mb-3 mb-md-0 demo-link d-flex align-items-center justify-content-center">
