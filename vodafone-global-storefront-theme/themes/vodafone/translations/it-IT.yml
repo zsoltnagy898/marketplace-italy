@@ -38,3 +38,5 @@ searchBar:
   placeholder: 'Trova applicazioni'
 register_link: 'https://cloud-marketplace.vodafone.de/vap/#/saas-register'
 register_text: 'Register'
+cta_labels:
+  LEAD_GEN: 'Contattaci'

@@ -1,7 +1,7 @@
 {% from "/macros/simple-tooltip.html" import simpleTooltip %}
 {% from "/macros/profile/profile-upgrade.html" import UpgradeModal %}
 
-{% macro productActionButton(actionData, options) %}
+{% macro productActionButton(actionData, i18n, options) %}
     {% set isAddToCart = actionData.actionType == "ADD_TO_CART" or actionData.actionType == "CONFIGURE" %}
     <a 
         {% if actionData.enabled and actionData.url %}href="{{ actionData.url }}"{% endif %}
@@ -26,7 +26,12 @@
                 role="button"
                 {% endif %}
     >
-        <span>{{ actionData.label }}</span>
+        {% if options.icon %}
+        <svg focusable="false" aria-hidden="true" class="icon icon--small mr-3">
+            <use xlink:href="{{options.icon}}"/>
+        </svg>
+        {% endif %}
+        <span>{{ i18n[actionData.actionType] or actionData.label }}</span>
         {{ simpleTooltip(actionData.tooltip, "bottom") }}
     </a>
     {% if actionData.popup and actionData.actionType == "CAN_MOSI_UPGRADE" %}

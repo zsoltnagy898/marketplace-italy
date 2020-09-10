@@ -1,6 +1,6 @@
 {% from "/macros/profile/profile-action-button.html" import productActionButton %}
 
-{% macro productOverview(application) %}
+{% macro productOverview(application, i18n) %}
 {% set hasDemoButton = application.overview.callToActions.demo.label %}
 {% set hasGuideButton = application.overview.downloadDocumentationUrl %}
 <div id="video-dialog"
@@ -51,14 +51,7 @@
         {% endif %}
         <div class="col col-12 {{'col-lg' if (not hasDemoButton) and (not hasGuideButton)}} d-flex justify-content-center flex-wrap flex-md-nowrap profile-overview__call-to-actions">
             {% for cta in application.callToActions.items %}
-            <!-- <a href="#Editions"
-               class="button button--primary mb-3 mb-md-0 d-flex align-items-center justify-content-center">
-                <svg focusable="false" aria-hidden="true" class="icon icon--small mr-3">
-                    <use xlink:href="#icon-shopping-trolley"/>
-                </svg>
-                {{item.label}}
-            </a> -->
-            {{ productActionButton(cta) }}
+            {{ productActionButton(cta, i18n) }}
             {% endfor %}
 
             {% if application.overview.callToActions.demo.label %}
