@@ -123,7 +123,7 @@
             {% for edition in editions.items %}
             <div class="col-12 profile-edition-item mb-3">
                 {{profileEditionListItemHeader(edition)}}
-                {{profileEditionListItemContent(edition, editions, 'mobile', loop)}}
+                {{profileEditionListItemContent(edition, editions, 'mobile', loop, 0, i18n.custom.cta_labels)}}
             </div>
             {%- endfor %}
         </div>

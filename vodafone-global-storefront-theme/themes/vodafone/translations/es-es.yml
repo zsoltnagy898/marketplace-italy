@@ -36,3 +36,5 @@ help_menu: 'Para consultas de carácter comercial, por favor, consulte con su ej
 help_menu_title: '¿necesitas ayuda?'
 searchBar:
   placeholder: 'Buscar aplicaciones'
+cta_labels:
+  LEAD_GEN: 'Deja tus datos y contactaremos contigo'

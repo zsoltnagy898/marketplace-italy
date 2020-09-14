@@ -5,7 +5,7 @@
 {% from "/macros/profile/profile-edition-list-item-content.html" import profileEditionListItemContent %}
 {% from "/macros/profile/show-more-edition-item.html" import showMoreEditionItem %}
 
-{% macro editionsPricing(editions) %}
+{% macro editionsPricing(editions, i18n) %}
 <div class="container profile-editions">
     <div class="row">
         <div class="col-12">
@@ -70,7 +70,7 @@
 
             {% if items.length > 0 %}
 
-            {{profileEditionList(editions, items, sliceCountFirstRow === 3, 0)}}
+            {{profileEditionList(editions, items, sliceCountFirstRow === 3, 0, i18n)}}
 
             {% endif %}
 
@@ -109,7 +109,7 @@
 
             {% if items.length > 0 %}
 
-            {{profileEditionList(editions, items, sliceCountOtherRows === 3, sliceCountFirstRow + transformedIndex)}}
+            {{profileEditionList(editions, items, sliceCountOtherRows === 3, sliceCountFirstRow + transformedIndex, i18n)}}
 
             {% endif %}
 
@@ -123,7 +123,7 @@
             {% for edition in editions.items %}
             <div class="col-12 profile-edition-item mb-3">
                 {{profileEditionListItemHeader(edition)}}
-                {{profileEditionListItemContent(edition, editions, 'mobile', loop)}}
+                {{profileEditionListItemContent(edition, editions, 'mobile', loop, 0, i18n)}}
             </div>
             {%- endfor %}
         </div>
@@ -155,7 +155,6 @@
         } else {
             currentContainer = $(globalBulletsContainer);
         }
-
         currentContainer.toggleClass("open");
     }
 

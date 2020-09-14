@@ -199,7 +199,7 @@
 
 {% if application.editions.items.length > 0 %}
 <section id="Editions" class="section section--white">
-    {{editionsPricing(application.editions)}}
+    {{editionsPricing(application.editions, i18n.custom.cta_labels)}}
 </section>
 {% endif %}
 <div id="appbottom" data-vue-page="profile2">
